@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new Article</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+       <h1 class="m-2">New Article</h1> 
+       <form action="/blogs" method="post">
+            <label for="title">Title</label>
+            <input name="title" class="d-block" id="title">
+            <label for="desc">Description</label>
+            <input name="desc" class="d-block" id="desc">
+            <label for="article">Article</label>
+            <textarea name="article" class="d-block"></textarea>
+            <button type="submit" class="btn btn-success mt-2">Save</button>
+       </form>
+    </div>
+</body>
+
+</html>
