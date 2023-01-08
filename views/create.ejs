@@ -14,16 +14,19 @@
 
     <div class="container">
        <h1 class="m-2">New Article</h1> 
+       <div class="form-group">
        <form action="/blogs" method="post">
             <label for="title">Title</label>
-            <input name="title" class="d-block" id="title">
+            <input name="title" value="<%= article.title%>" class="form-control" id="title" required >
             <label for="desc">Description</label>
-            <input name="desc" class="d-block" id="desc">
-            <label for="article">Article</label>
-            <textarea name="article" class="d-block"></textarea>
+            <input name="desc"  value="<%= article.desc%>" class="form-control" id="desc" required>
+            <label for="text">Article</label>
+            <textarea name="text" class="form-control" required><%= article.text%></textarea>
+            <a href="/blogs" class="btn btn-secondary mt-2">Go Back</a>
             <button type="submit" class="btn btn-success mt-2">Save</button>
        </form>
     </div>
+</div>
 </body>
 
 </html>

@@ -6,11 +6,18 @@ const blogsRouter = require('./routes/blogs')
 
 app.set("view engine", 'ejs')
 app.use(express.urlencoded())
-//mongoose.connect("mogodb://localhost/nowhere")
+let p = async()=>{
+    mongoose.set('strictQuery', false);
+    await mongoose.connect('mongodb://127.0.0.1:27017/blog', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).then(db => console.log(' DB connected'))
+}
+p()
 
-app.get('/',(req,res)=>{
-    res.render('home')
-})
+// app.get('/',(req,res)=>{
+//     res.render('home')
+// })
 
 
 app.use('/blogs',blogsRouter)
