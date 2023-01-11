@@ -43,7 +43,7 @@ router.get('/', async (req, res) => {
     //         text:"lorem"
     //     }
     // ]
-     articles = await blog.find()
+     articles = await blog.find().sort({"date": -1})
     res.render('home', {
         article: articles
     })
@@ -54,11 +54,31 @@ router.get('/create', (req, res) => {
         article: articles
     })
 })
-router.get('/:id',async (req, res) => {
+router.get('/view/:id',async (req, res) => {
     let content = await blog.findById(req.params.id)
-    res.render('create', {
+    res.render('view', {
         article: content
     })
+})
+router.get('/edit/:id',async (req, res) => {
+    let content = await blog.findById(req.params.id)
+    res.render('edit', {                                                       // edit page
+        article: content
+    })
+})
+router.get('/delete/:id',async (req, res) => {
+    let content = await blog.deleteOne({"_id" : req.params.id})
+    res.redirect('/blogs')
+})
+router.post('/edit/:id',async (req,res)=>{
+    console.log(req.params.id)
+    let content = await blog.findById(req.params.id)
+    // content.title =  req.body.title,                                         // needs some repair
+    // content.desc = req.body.desc,
+    // content.text = req.body.text
+
+
+    res.send(content)
 })
 
 router.post('/', async (req, res) => {
