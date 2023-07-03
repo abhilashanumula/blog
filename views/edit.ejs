@@ -15,7 +15,7 @@
     <div class="container">
        <h1 class="m-2">Edit your Article</h1> 
        <div class="form-group">
-       <form action="/blogs" method="post">
+       <form action="/blogs/<%= article.id %>?_method=PUT" method="post">
             <label for="title">Title</label>
             <input name="title" value="<%= article.title%>" class="form-control" id="title" required >
             <label for="desc">Description</label>

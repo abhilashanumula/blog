@@ -70,15 +70,15 @@ router.get('/delete/:id',async (req, res) => {
     let content = await blog.deleteOne({"_id" : req.params.id})
     res.redirect('/blogs')
 })
-router.post('/edit/:id',async (req,res)=>{
+
+router.post('/:id',async (req,res)=>{
     console.log(req.params.id)
     let content = await blog.findById(req.params.id)
-    // content.title =  req.body.title,                                         // needs some repair
-    // content.desc = req.body.desc,
-    // content.text = req.body.text
-
-
-    res.send(content)
+    content.title =  req.body.title,                                         // needs some repair
+    content.desc = req.body.desc,
+    content.text = req.body.text
+    await content.save();
+    res.redirect('/blogs')
 })
 
 router.post('/', async (req, res) => {
