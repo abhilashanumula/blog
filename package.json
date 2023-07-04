@@ -4,7 +4,7 @@
   "description": "This is a blog website containing various articles",
   "main": "app.js",
   "scripts": {
-    "devRun": "nodemon app.js"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",

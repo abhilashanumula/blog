@@ -23,7 +23,7 @@ Blog Website is a basic CRUD (Create, Read, Update, Delete) web application buil
 
 ## Usage
 
-1. Start the server: `npm start`
+1. Start the server: `npm run dev`
 2. Open your browser and visit `http://localhost:3000` to access the blog website.
 3. Start the MongoDB local service.
 4. Create new blog posts, view existing posts, edit or delete your own posts.
